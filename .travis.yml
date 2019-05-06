@@ -13,4 +13,6 @@ addons:
 jobs:
   include:
     - name: firstjob
-      script: echo "hello from firstjob"
+      script: 
+        - echo "hello from firstjob"
+        - env        
