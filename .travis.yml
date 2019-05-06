@@ -1,0 +1,16 @@
+dist: xenial
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.23.2
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+      - expect-dev # for unbuffer: brings color back into travis logs
+
+jobs:
+  include:
+    - name: firstjob
+      script: echo "hello from firstjob"
