@@ -15,4 +15,8 @@ jobs:
     - name: firstjob
       script: 
         - echo "hello from firstjob"
-        - env        
+        - env
+    - name: secondjob
+      script:
+        - git merge-base HEAD master
+        - git merge-base FETCH_HEAD master
