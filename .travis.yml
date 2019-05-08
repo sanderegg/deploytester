@@ -23,5 +23,5 @@ jobs:
         provider: script
         script: echo "here we deploy stuff with tag ${TRAVIS_TAG}"
         on:
-          branch: staging_common
+          branch: staging
           tags: true
