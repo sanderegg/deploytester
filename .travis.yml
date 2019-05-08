@@ -13,10 +13,9 @@ addons:
 jobs:
   include:
     - name: firstjob
-      script: 
+      script:
         - echo "hello from firstjob"
         - env
     - name: secondjob
       script:
         - git merge-base HEAD master
-        - git merge-base FETCH_HEAD master
