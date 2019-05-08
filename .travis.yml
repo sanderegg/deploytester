@@ -1,0 +1,27 @@
+dist: xenial
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.23.2
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+      - expect-dev # for unbuffer: brings color back into travis logs
+
+jobs:
+  include:
+    - name: firstjob
+      script:
+        - echo "hello from firstjob"
+        - env
+    - name: secondjob
+      script:
+        - git merge-base HEAD master
+      deploy:
+        provider: script
+        script: echo "here we deploy stuff with tag ${TRAVIS_TAG}"
+        on:
+          branch: staging_common
+          tags: true
