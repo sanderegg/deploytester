@@ -21,7 +21,7 @@ jobs:
         - git merge-base HEAD master
       deploy:
         provider: script
-        script: echo "here we deploy stuff with tag ${TRAVIS_TAGS}"
+        script: echo "here we deploy stuff with tag ${TRAVIS_TAG}"
         on:
           branch: staging_common
           tags: true
